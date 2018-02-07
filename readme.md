@@ -14,3 +14,6 @@ To run unit tests, execute::
 
 `mvn test`
 
+For convenience, I package the project so you can run it without Maven:
+
+`java -cp jar/*:. com.xterr.tradereporting.App`
