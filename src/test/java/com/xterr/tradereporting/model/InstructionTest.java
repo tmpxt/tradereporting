@@ -4,17 +4,17 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class InstructionTest {
+public class InstructionTest {
 
 
     @Test
-    void test_getUsdAmount() throws ModelException {
+    public void test_getUsdAmount() throws ModelException {
         Instruction instruction = getMockInstruction();
         assertEquals(new Double(10025), instruction.getUsdAmount());
     }
 
     @Test
-    void test_getEffectiveSettlementDate() throws ModelException {
+    public void test_getEffectiveSettlementDate() throws ModelException {
         Instruction instruction = getMockInstruction();
 
         assertEquals(instruction.SettlementDate, instruction.getEffectiveSettlementDate());

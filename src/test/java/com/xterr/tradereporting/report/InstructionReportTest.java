@@ -11,9 +11,9 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-class InstructionReportTest {
+public class InstructionReportTest {
     @Test
-    void test_getIncomingUsdSettledPerDay() throws ModelException {
+    public void test_getIncomingUsdSettledPerDay() throws ModelException {
         InstructionReport reporter = new InstructionReport(new InstructionDAO("mocks/mock_data.json"));
         Map<LocalDate, Double> results = reporter.getUsdSettledPerDay(BuySell.BUY);
         assertNotNull(results);
@@ -24,7 +24,7 @@ class InstructionReportTest {
     }
 
     @Test
-    void test_getEntitiesRanking() throws ModelException {
+    public void test_getEntitiesRanking() throws ModelException {
         InstructionReport reporter = new InstructionReport(new InstructionDAO("mocks/mock_data.json"));
         Map<String, Double> results = reporter.getEntitiesRanking(BuySell.BUY);
         assertNotNull(results);

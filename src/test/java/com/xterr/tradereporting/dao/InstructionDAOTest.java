@@ -9,10 +9,10 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-class InstructionDAOTest {
+public class InstructionDAOTest {
 
     @Test
-    void test_getAll() throws FileNotFoundException {
+    public void test_getAll() throws FileNotFoundException {
        DAO<Instruction> dao = new InstructionDAO("mocks/mock_data.json");
        List<Instruction> instructions = dao.getAll();
        assertNotNull(instructions);
