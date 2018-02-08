@@ -54,6 +54,7 @@ public class InstructionReport {
         Map<String, Double> sumByEntity = instructions.stream().filter(i -> i.BuySell == filterFlag).collect(
                 Collectors.groupingBy(i -> i.Entity, Collectors.summingDouble(InstructionReport::uncheckedUsdAmount)));
 
+        // By returning a LinkedHashMap, it preserve insertion order
         return sumByEntity.entrySet().stream().sorted(Map.Entry.<String, Double> comparingByValue().reversed()).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
     }
 
